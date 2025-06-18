@@ -1,2 +1,1 @@
 # nixOS.conf
-# nixOS.conf
