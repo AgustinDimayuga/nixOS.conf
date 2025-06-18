@@ -130,6 +130,8 @@
     tldr
     libnotify
     swaynotificationcenter
+    cargo
+    rustc
     # Tmux Dependencies
     tmux
     acpi
