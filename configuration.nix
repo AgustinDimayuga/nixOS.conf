@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -22,17 +23,17 @@
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
     ohMyZsh = {
-    enable = true;
-    theme = "robbyrussell";
-    plugins = ["git" "web-search" ];
+      enable = true;
+      theme = "robbyrussell";
+      plugins = [ "git" "web-search" ];
     };
   };
-  
+
 
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
@@ -73,7 +74,7 @@
     pkgs.nerd-fonts.jetbrains-mono
     jetbrains-mono
   ];
-  
+
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -87,7 +88,7 @@
   # OR
   services.pipewire = {
     enable = true;
-    alsa.enable =true;
+    alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
@@ -116,7 +117,7 @@
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
-  nixpkgs.config.allowUnfree=true;
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # Terimnal Tools
     btop
@@ -156,6 +157,8 @@
     hunspell
     solaar
     spotify
+    google-chrome
+    morgen
     # Nvim dependencies
     lazygit
     gcc
@@ -176,7 +179,7 @@
     lua-language-server
     stylua
     fastfetch
-    
+
 
 
   ];
@@ -223,5 +226,5 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.05"; # Did you read the comment?
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
