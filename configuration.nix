@@ -133,6 +133,7 @@
     swaynotificationcenter
     cargo
     rustc
+    openjdk
     # Tmux Dependencies
     tmux
     acpi
@@ -159,6 +160,7 @@
     spotify
     google-chrome
     thunderbird
+    zen-browser
     # Nvim dependencies
     lazygit
     gcc
