@@ -158,7 +158,7 @@
     solaar
     spotify
     google-chrome
-    morgen
+    thunderbird
     # Nvim dependencies
     lazygit
     gcc
