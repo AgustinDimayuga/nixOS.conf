@@ -160,7 +160,6 @@
     spotify
     google-chrome
     thunderbird
-    zen-browser
     # Nvim dependencies
     lazygit
     gcc
@@ -181,6 +180,7 @@
     lua-language-server
     stylua
     fastfetch
+    zathura
 
 
 
