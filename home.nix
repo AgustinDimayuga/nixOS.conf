@@ -228,5 +228,8 @@
   programs.home-manager.enable = true;
   home.file."/.config/qutebrowser/config.py".source = qutebrowser/config.py;
   home.file."/.config/hypr/hyprpaper.conf".source = hypr/hyprpaper.conf;
-  home.file."/.config/yazi/theme.toml".source = ./yazi/theme.conf;
+  home.file."/.config/yazi/theme.toml".source = ./yazi/theme.toml;
+  home.file."/.config/yazi/yazi.toml".source = ./yazi/yazi.toml;
+  home.file."/.config/yazi/keymap.toml".source = ./yazi/keymap.toml;
+
 }
