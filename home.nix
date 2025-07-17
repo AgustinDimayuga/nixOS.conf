@@ -154,9 +154,9 @@
       sync_to_monitor = true;
       cursor = "#928374";
       cursor_text_color = "background";
-      bell_border_color = "#8ec07c";
-      active_border_color = "#d3869b";
-      inactive_border_color = "#665c54";
+      bell_border_color = "#F9E2AF";
+      active_border_color = "#B4BEFE";
+      inactive_border_color = "#6C7086";
       foreground = "#ebdbb2";
       background = "#282828";
       selection_foreground = "#928374";
