@@ -134,6 +134,26 @@
     cargo
     rustc
     openjdk
+    neomutt
+    yazi
+    # Dependencies 
+    file
+    ffmpeg
+    jq
+    poppler
+    zoxide
+    curl
+    isync
+    msmtp
+    pass
+    lynx
+    abook
+    notmuch
+    urlscan
+    gettext
+    mutt-wizard
+    gnupg
+    pinentry-curses
     # Tmux Dependencies
     tmux
     acpi
@@ -154,12 +174,13 @@
     vscode
     qutebrowser
     obsidian
-    libreoffice-qt
     hunspell
     solaar
     spotify
     google-chrome
     thunderbird
+    calcurse
+
     # Nvim dependencies
     lazygit
     gcc
@@ -169,7 +190,10 @@
     sqlite
     stylua
     ast-grep
-    python314
+    python3
+    python313Packages.httplib2
+    python313Packages.urllib3
+    python313Packages.requests
     luarocks-nix
     lua
     unzip

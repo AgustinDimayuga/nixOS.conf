@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, zen-browser, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -14,9 +14,17 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "25.11"; # Please read the comment before changing.
+  imports = [
+    # zen-browser.homeModules.twilight
+    zen-browser.homeModules.beta
+    # Or: inputs.zen-browser.homeModules.twilight-official
+  ];
+  programs.zen-browser.enable = true;
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
+    adwaita-qt
+    adwaita-qt6
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -69,13 +77,15 @@
   #  /etc/profiles/per-user/agustin/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    ##EDITOR = "nvim";
     HYPRSHOT_DIR = "${config.home.homeDirectory}/Pictures/Screenshots";
+    GTK_THEME = "Adwaita-dark";
   };
   programs.zsh = {
     enable = true;
     initContent = ''
       bindkey -v
+      export EDITOR=nvim
     '';
   };
   programs.git = {
@@ -141,13 +151,9 @@
     };
     settings = {
       background_opacity = 0.9;
-      dynamic_background_opacity = true;
-      #Gruv Box Theme
       sync_to_monitor = true;
       cursor = "#928374";
       cursor_text_color = "background";
-      url_color = "#83a598";
-      visual_bell_color = "#8ec07c";
       bell_border_color = "#8ec07c";
       active_border_color = "#d3869b";
       inactive_border_color = "#665c54";
@@ -195,6 +201,26 @@
     };
 
   };
+  dconf.enable = true;
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+
+  };
+  gtk = {
+    enable = true;
+    theme.name = "Adwaita-dark";
+    iconTheme.name = "Adwaita";
+  };
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk";
+    style.name = "Adwaita-dark";
+  };
+  programs.yazi.enable = true;
+
+  #Turn on Dark Theme 
   home.file."/.config/hypr/hyprland.conf".source = hypr/hyprland.conf;
   home.file.".tmux.conf".source = tmux/.tmux.conf;
   home.file."/.config/waybar/config.jsonc".source = waybar/config.jsonc;
@@ -202,4 +228,5 @@
   programs.home-manager.enable = true;
   home.file."/.config/qutebrowser/config.py".source = qutebrowser/config.py;
   home.file."/.config/hypr/hyprpaper.conf".source = hypr/hyprpaper.conf;
+  home.file."/.config/yazi/theme.toml".source = ./yazi/theme.conf;
 }

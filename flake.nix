@@ -6,8 +6,14 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
+      # to have it up-to-date or simply don't specify the nixpkgs input
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, ... }:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, zen-browser, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -23,8 +29,9 @@
       homeConfigurations = {
         agustin = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+          extraSpecialArgs = { inherit zen-browser; }; # <-- This passes inputs to home.nix
           modules = [ ./home.nix ];
         };
       };
     };
-}
+}    
