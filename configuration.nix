@@ -72,6 +72,7 @@
   fonts.packages = with pkgs; [
     font-awesome
     pkgs.nerd-fonts.jetbrains-mono
+    pkgs.nerd-fonts.hack
     jetbrains-mono
   ];
 
