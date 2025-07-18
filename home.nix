@@ -221,6 +221,7 @@
     style.name = "Adwaita-dark";
   };
   programs.yazi.enable = true;
+  programs.zathura.enable = true;
 
   #Turn on Dark Theme 
   home.file."/.config/hypr/hyprland.conf".source = hypr/hyprland.conf;
@@ -233,5 +234,6 @@
   home.file."/.config/yazi/theme.toml".source = ./yazi/theme.toml;
   home.file."/.config/yazi/yazi.toml".source = ./yazi/yazi.toml;
   home.file."/.config/yazi/keymap.toml".source = ./yazi/keymap.toml;
+  home.file."/.config/zathura/zathurarc".source = ./zathura/zathurarc;
 
 }
