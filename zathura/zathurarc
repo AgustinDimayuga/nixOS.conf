@@ -1,40 +1,51 @@
-set notification-error-bg       "rgba(251,241,199,1)"  # bg
-set notification-error-fg       "rgba(157,0,6,1)"      # bright:red
-set notification-warning-bg     "rgba(251,241,199,1)"  # bg
-set notification-warning-fg     "rgba(181,118,20,1)"   # bright:yellow
-set notification-bg             "rgba(251,241,199,1)"  # bg
-set notification-fg             "rgba(121,116,14,1)"   # bright:green
+# Theme
+set notification-error-bg       "#282828" # bg
+set notification-error-fg       "#fb4934" # bright:red
+set notification-warning-bg     "#282828" # bg
+set notification-warning-fg     "#fabd2f" # bright:yellow
+set notification-bg             "#282828" # bg
+set notification-fg             "#b8bb26" # bright:green
 
-set completion-bg               "rgba(213,196,161,1)"  # bg2
-set completion-fg               "rgba(60,56,54,1)"     # fg
-set completion-group-bg         "rgba(235,219,178,1)"  # bg1
-set completion-group-fg         "rgba(146,131,116,1)"  # gray
-set completion-highlight-bg     "rgba(7,102,120,1)"    # bright:blue
-set completion-highlight-fg     "rgba(213,196,161,1)"  # bg2
+set completion-bg               "#504945" # bg2
+set completion-fg               "#ebdbb2" # fg
+set completion-group-bg         "#3c3836" # bg1
+set completion-group-fg         "#928374" # gray
+set completion-highlight-bg     "#83a598" # bright:blue
+set completion-highlight-fg     "#504945" # bg2
 
 # Define the color in index mode
-set index-bg                    "rgba(213,196,161,1)"  # bg2
-set index-fg                    "rgba(60,56,54,1)"     # fg
-set index-active-bg             "rgba(7,102,120,1)"    # bright:blue
-set index-active-fg             "rgba(213,196,161,1)"  # bg2
+set index-bg                    "#282828" # bg2
+set index-fg                    "#ebdbb2" # fg
+set index-active-bg             "#8ec07c" # bright:blue
+set index-active-fg             "#1b1b1b" # bg2
 
-set inputbar-bg                 "rgba(251,241,199,1)"  # bg
-set inputbar-fg                 "rgba(60,56,54,1)"     # fg
+set inputbar-bg                 "#1b1b1b" # bg
+set inputbar-fg                 "#458588" # fg
 
-set statusbar-bg                "rgba(213,196,161,1)"  # bg2
-set statusbar-fg                "rgba(60,56,54,1)"     # fg
+set statusbar-bg                "#282828" # bg2
+set statusbar-fg                "#b16286" # fg
 
-set highlight-color             "rgba(181,118,20,0.5)" # bright:yellow
-set highlight-active-color      "rgba(175,58,3,0.5)"   # bright:orange
+set highlight-color             "rgba(249, 188, 47, 0.5)" # bright:yellow
+set highlight-active-color      "rgba(253, 128, 25, 0.5)" # bright:orange
+set highlight-fg                "rgba(40, 40, 40, 1)"
 
-set default-bg                  "rgba(251,241,199,1)"  # bg
-set default-fg                  "rgba(60,56,54,1)"     # fg
+set default-bg                  "#282828" # bg
+set default-fg                  "#ebdbb2" # fg
 set render-loading              true
-set render-loading-bg           "rgba(251,241,199,1)"  # bg
-set render-loading-fg           "rgba(60,56,54,1)"     # fg
+set render-loading-bg           "#1b1b1b" # bg
+set render-loading-fg           "#ebdbb2" # fg
 
 # Recolor book content's color
-set recolor-lightcolor          "rgba(251,241,199,1)"  # bg
-set recolor-darkcolor           "rgba(60,56,54,1)"     # fg
-set recolor                     "true"
-set recolor-keephue             "true"                 # keep original color
+set recolor-lightcolor          "#1b1b1b" # bg
+set recolor-darkcolor           "#ebdbb2" # fg
+set recolor                     "true"      # set recolor mode by default
+set recolor-keephue             true        # keep original color
+
+# configs
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set statusbar-basename true
+set page-padding 5
+set selection-clipboard clipboard
+set font "IBM Plex Sans Arabic"
+set show-signature-information true
