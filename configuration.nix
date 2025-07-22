@@ -69,7 +69,7 @@
 
   hardware = {
     graphics.enable = true;
-
+    bluetooth.enable = true;
   };
 
   fonts.packages = with pkgs; [
@@ -87,6 +87,7 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
+  services.blueman.enable = true; # Optional GUI
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
@@ -187,6 +188,7 @@
     google-chrome
     thunderbird
     calcurse
+    obs-studio
 
     # Nvim dependencies
     lazygit
