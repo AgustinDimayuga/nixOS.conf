@@ -150,6 +150,7 @@
     openjdk
     neomutt
     yazi
+    pavucontrol
     # Dependencies 
     file
     ffmpeg
