@@ -97,6 +97,15 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+    audio.enable = true;
+  };
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    config.common.default = "*";
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
