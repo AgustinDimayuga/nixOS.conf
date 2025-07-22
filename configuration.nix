@@ -151,6 +151,7 @@
     neomutt
     yazi
     pavucontrol
+    mpv
     # Dependencies 
     file
     ffmpeg
