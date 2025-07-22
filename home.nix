@@ -1,5 +1,4 @@
 { config, pkgs, zen-browser, ... }:
-
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -25,6 +24,7 @@
   home.packages = with pkgs; [
     adwaita-qt
     adwaita-qt6
+    gruvbox-dark-gtk
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -212,13 +212,15 @@
   };
   gtk = {
     enable = true;
-    theme.name = "Adwaita-dark";
-    iconTheme.name = "Adwaita";
+    theme.name = "Gruvbox-Dark-B";
+    theme.package = pkgs.gruvbox-dark-gtk;
+    iconTheme.name = "Papirus-Dark";
+    iconTheme.package = pkgs.papirus-icon-theme;
   };
   qt = {
     enable = true;
     platformTheme.name = "gtk";
-    style.name = "Adwaita-dark";
+    style.name = "Gruvbox-Dark-B";
   };
   programs.yazi.enable = true;
   programs.zathura.enable = true;

@@ -54,6 +54,9 @@
   # services.xserver.enable = true;
 
   # Enable Hyprland
+  #
+  #
+  security.pam.services.login.gnupg.enable = true;
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -155,6 +158,9 @@
     mutt-wizard
     gnupg
     pinentry-curses
+    pinentry-qt
+    dmidecode
+    lshw
     # Tmux Dependencies
     tmux
     acpi
