@@ -29,7 +29,7 @@
     };
   };
 
-
+  services.fwupd.enable = true;
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -68,8 +68,8 @@
   };
 
   hardware = {
-    graphics.enable = true;
     bluetooth.enable = true;
+    enableAllFirmware = true;
   };
 
   fonts.packages = with pkgs; [
@@ -138,8 +138,10 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     neovim
-    kitty
     git
+    glxinfo
+    kitty
+    alacritty
     pfetch
     brightnessctl
     tldr

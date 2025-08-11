@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "usbhid" "sd_mod" ];
@@ -14,23 +15,24 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/747845f1-0ef0-4885-9a84-7f6a041f92f5";
+    {
+      device = "/dev/disk/by-uuid/747845f1-0ef0-4885-9a84-7f6a041f92f5";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/79E6-24C1";
+    {
+      device = "/dev/disk/by-uuid/79E6-24C1";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/3dcd186c-60c2-4996-92d5-307cf9298664"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/3dcd186c-60c2-4996-92d5-307cf9298664"; }];
 
 
   # Enable Linux Kernal for FW 13 TEMP
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  #boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Enable firmware updates
   services.fwupd.enable = true;
