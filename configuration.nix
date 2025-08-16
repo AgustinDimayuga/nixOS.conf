@@ -56,7 +56,7 @@
   # Enable Hyprland
   #
   #
-  security.pam.services.login.gnupg.enable = true;
+  #security.pam.services.login.gnupg.enable = true;
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -170,9 +170,9 @@
     urlscan
     gettext
     mutt-wizard
-    gnupg
-    pinentry-curses
-    pinentry-qt
+    #gnupg
+    #pinentry-curses
+    #pinentry-qt
     dmidecode
     lshw
     # Tmux Dependencies
