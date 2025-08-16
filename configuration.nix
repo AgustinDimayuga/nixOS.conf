@@ -150,7 +150,7 @@
     cargo
     rustc
     openjdk
-    neomutt
+    #neomutt
     yazi
     pavucontrol
     mpv
@@ -169,7 +169,7 @@
     notmuch
     urlscan
     gettext
-    mutt-wizard
+    #mutt-wizard
     #gnupg
     #pinentry-curses
     #pinentry-qt
