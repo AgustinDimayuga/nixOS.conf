@@ -28,7 +28,7 @@
       plugins = [ "git" "web-search" ];
     };
   };
-
+  programs.kdeconnect.enable = true;
   services.fwupd.enable = true;
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
