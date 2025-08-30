@@ -198,7 +198,6 @@
     hunspell
     solaar
     spotify
-    spicetify-cli
     google-chrome
     thunderbird
     calcurse
