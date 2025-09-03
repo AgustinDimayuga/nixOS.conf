@@ -7,8 +7,8 @@
     "custom/calcurse"
   ],
   "modules-center": [
-    "clock",
-    "custom/playerctl"
+    "clock"/*,
+    "custom/playerctl"*/
   ],
   "modules-right": [
     "tray",
@@ -75,7 +75,7 @@
   },
   "network": {
     "interval": 1,
-    "format-wifi": "󰒢 "/*{essid}"*/,
+    "format-wifi": "󰒢 {essid}",
     "format-ethernet": "󰈀  {ifname}",
     "format-linked": "󰒢 {essid} (No IP)",
     "format-disconnected": "󰒢 Disconnected",
