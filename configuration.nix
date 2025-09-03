@@ -175,6 +175,7 @@
     pinentry-qt
     dmidecode
     lshw
+    gruvbox-dark-gtk
     # Tmux Dependencies
     tmux
     acpi
