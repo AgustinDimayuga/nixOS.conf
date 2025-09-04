@@ -175,7 +175,12 @@
     pinentry-qt
     dmidecode
     lshw
-    gruvbox-dark-gtk
+    sassc
+    gtk-engine-murrine
+    gnome-themes-extra
+    nautilus
+    clickgen
+    yarn
     # Tmux Dependencies
     tmux
     acpi

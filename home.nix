@@ -25,6 +25,7 @@
     adwaita-qt
     adwaita-qt6
     gruvbox-dark-gtk
+    gruvbox-dark-icons-gtk
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -79,7 +80,7 @@
   home.sessionVariables = {
     ##EDITOR = "nvim";
     HYPRSHOT_DIR = "${config.home.homeDirectory}/Pictures/Screenshots";
-    GTK_THEME = "Adwaita-dark";
+    GTK_THEME = "gruvbox-dark";
   };
   programs.zsh = {
     enable = true;
@@ -217,15 +218,13 @@
   };
   gtk = {
     enable = true;
-    theme.name = "Gruvbox-Dark-B";
     theme.package = pkgs.gruvbox-dark-gtk;
-    iconTheme.name = "Papirus-Dark";
-    iconTheme.package = pkgs.papirus-icon-theme;
+    theme.name = "gruvbox-dark";
+    iconTheme.package = pkgs.gruvbox-dark-icons-gtk;
+    iconTheme.name = "gruv-dark-icons";
   };
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
-    style.name = "Gruvbox-Dark-B";
   };
   programs.yazi.enable = true;
   programs.zathura.enable = true;
