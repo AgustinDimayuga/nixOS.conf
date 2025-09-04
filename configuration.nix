@@ -178,7 +178,7 @@
     sassc
     gtk-engine-murrine
     gnome-themes-extra
-    nautilus
+    nemo
     clickgen
     yarn
     # Tmux Dependencies
