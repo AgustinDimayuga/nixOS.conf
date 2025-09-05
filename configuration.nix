@@ -56,7 +56,9 @@
   # Enable Hyprland
   #
   #
+  #### Allow GPG Key to be unlocked when start up. This is used for neomutt and mutt wizard. 
   security.pam.services.login.gnupg.enable = true;
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;

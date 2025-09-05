@@ -19,6 +19,7 @@
     # Or: inputs.zen-browser.homeModules.twilight-official
   ];
   programs.zen-browser.enable = true;
+  nixpkgs.config.allowUnfree = true;
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -81,6 +82,16 @@
     HYPRSHOT_DIR = "${config.home.homeDirectory}/Pictures/Screenshots";
     # switch to gruvbox pkgs.gruvbox-dark-gtk if failure
     GTK_THEME = "Gruvbox-Dark";
+    XCURSOR_THEME = "macOS";
+    XCURSOR_SIZE = 20;
+  };
+  home.pointerCursor = {
+    package = pkgs.apple-cursor;
+    name = "macOS";
+    size = 20;
+
+
+
   };
   programs.zsh = {
     enable = true;
