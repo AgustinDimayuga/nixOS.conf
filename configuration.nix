@@ -88,8 +88,9 @@
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
-
   services.blueman.enable = true; # Optional GUI
+  services.auto-cpufreq.enable = true;
+  services.power-profiles-daemon.enable = false;
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
@@ -210,6 +211,7 @@
     thunderbird
     calcurse
     obs-studio
+    auto-cpufreq
 
     # Nvim dependencies
     lazygit
