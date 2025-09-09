@@ -90,7 +90,8 @@
   # services.printing.enable = true;
   services.blueman.enable = true; # Optional GUI
   services.auto-cpufreq.enable = true;
-  services.power-profiles-daemon.enable = false;
+  services.tlp.enable = false; ## enable if removing auto-freq
+  services.power-profiles-daemon.enable = false; ## enable if removing auto-freq
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
