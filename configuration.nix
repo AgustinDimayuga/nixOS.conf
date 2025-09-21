@@ -89,8 +89,8 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
   services.blueman.enable = true; # Optional GUI
-  services.auto-cpufreq.enable = true;
-  services.tlp.enable = false; ## enable if removing auto-freq
+  services.auto-cpufreq.enable = false;
+  services.tlp.enable = true; ## enable if removing auto-freq
   services.power-profiles-daemon.enable = false; ## enable if removing auto-freq
   # Enable sound.
   # services.pulseaudio.enable = true;
@@ -212,7 +212,7 @@
     thunderbird
     calcurse
     obs-studio
-    auto-cpufreq
+    networkmanagerapplet
 
     # Nvim dependencies
     lazygit
