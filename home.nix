@@ -102,7 +102,7 @@
       exec = "chromium --new-window --app=https://www.notion.so/ --class Notion";
       terminal = false;
       categories = [ "Office" "Utility" ];
-      icon = "${pkgs.adwaita-icon-theme}/share/icons/Adwaita/scalable/apps/accessories-text-editor-symbolic.svg";
+      icon = ./icons/notion.png;
     };
 
     outlook = {
@@ -112,7 +112,7 @@
       exec = "chromium --new-window --app=https://outlook.office.com/ --class Outlook";
       terminal = false;
       categories = [ "Office" "Email" ];
-      icon = "${pkgs.adwaita-icon-theme}/share/icons/Adwaita/scalable/apps/mail-client-symbolic.svg";
+      icon = ./icons/Outlook.png;
     };
     chatgpt = {
       name = "ChatGPT";
@@ -122,7 +122,7 @@
       exec = "chromium --new-window --app=https://chat.openai.com/ --class ChatGPT";
       terminal = false;
       categories = [ "Network" "Utility" ];
-      icon = "${pkgs.adwaita-icon-theme}/share/icons/Adwaita/scalable/apps/web-browser-symbolic.svg";
+      icon = ./icons/chatGPT.png;
     };
     claude = {
       name = "Claude";
@@ -131,7 +131,7 @@
       exec = "chromium --new-window --app=https://claude.ai/ --class Claude";
       terminal = false;
       categories = [ "Network" "Utility" ];
-      icon = "${pkgs.adwaita-icon-theme}/share/icons/Adwaita/scalable/apps/web-browser-symbolic.svg";
+      icon = ./icons/Claude.png;
     };
   };
   programs.zsh = {
