@@ -197,6 +197,7 @@
     hyprshot
     playerctl
     wofi
+    rofi
     waybar
     wayclip
     wl-clipboard
