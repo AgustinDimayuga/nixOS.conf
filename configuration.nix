@@ -215,6 +215,7 @@
     obs-studio
     networkmanagerapplet
     jetbrains.idea-community
+    ungoogled-chromium
 
     # Nvim dependencies
     lazygit

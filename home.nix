@@ -93,6 +93,47 @@
 
 
   };
+
+  xdg.desktopEntries = {
+    notion = {
+      name = "Notion";
+      genericName = "Workspace";
+      comment = "Notion web app";
+      exec = "chromium --new-window --app=https://www.notion.so/ --class Notion";
+      terminal = false;
+      categories = [ "Office" "Utility" ];
+      icon = "${pkgs.adwaita-icon-theme}/share/icons/Adwaita/scalable/apps/accessories-text-editor-symbolic.svg";
+    };
+
+    outlook = {
+      name = "Outlook";
+      genericName = "Mail";
+      comment = "Outlook web app";
+      exec = "chromium --new-window --app=https://outlook.office.com/ --class Outlook";
+      terminal = false;
+      categories = [ "Office" "Email" ];
+      icon = "${pkgs.adwaita-icon-theme}/share/icons/Adwaita/scalable/apps/mail-client-symbolic.svg";
+    };
+    chatgpt = {
+      name = "ChatGPT";
+      genericName = "AI Assistant";
+      comment = "ChatGPT web app";
+      # swap 'chromium' for brave/google-chrome/ungoogled-chromium if you prefer
+      exec = "chromium --new-window --app=https://chat.openai.com/ --class ChatGPT";
+      terminal = false;
+      categories = [ "Network" "Utility" ];
+      icon = "${pkgs.adwaita-icon-theme}/share/icons/Adwaita/scalable/apps/web-browser-symbolic.svg";
+    };
+    claude = {
+      name = "Claude";
+      genericName = "AI Assistant";
+      comment = "Claude web app";
+      exec = "chromium --new-window --app=https://claude.ai/ --class Claude";
+      terminal = false;
+      categories = [ "Network" "Utility" ];
+      icon = "${pkgs.adwaita-icon-theme}/share/icons/Adwaita/scalable/apps/web-browser-symbolic.svg";
+    };
+  };
   programs.zsh = {
     enable = true;
     initContent = ''
