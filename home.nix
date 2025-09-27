@@ -108,51 +108,87 @@
   };
   programs.wofi = {
     enable = true;
+
+    # This writes ~/.config/wofi/config
+    settings = {
+      width = 500;
+      height = 350;
+      location = "center";
+      show = "drun";
+      prompt = "Search...";
+      filter_rate = 100;
+      allow_markup = true;
+      no_actions = true;
+      halign = "fill";
+      orientation = "vertical";
+      content_halign = "fill";
+      insensitive = true;
+      allow_images = true;
+      image_size = 35;
+      gtk_dark = true;
+      dynamic_lines = true;
+    };
+
+    # This writes ~/.config/wofi/style.css
     style = ''
-      * 
+      * {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12pt;
+        border-radius: 8px;
+      }
+
       window {
-        margin: 0px;
+        margin: 0;
+        padding: 8px;
         border: 1px solid #928374;
-        background-color: #282828;
-        }
+        background-color: #282828; /* gruvbox bg0 */
+      }
 
-        #input {
-        margin: 5px;
+      #outer-box, #inner-box, #scroll {
+        background-color: #282828;
         border: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      #input {
+        margin: 8px;
+        padding: 8px 10px;
+        border: none;
+        color: #ebdbb2;          /* fg1 */
+        background-color: #1d2021; /* bg0_h */
+        box-shadow: none;
+      }
+
+      #img {
+        margin-right: 8px;
+      }
+
+      #entry {
+        margin: 4px 8px;
+        padding: 8px 10px;
+        border: none;
+        background-color: transparent;
         color: #ebdbb2;
+      }
+
+      #entry:selected {
         background-color: #1d2021;
-        }
+        color: #fbf1c7;          /* fg0 */
+        outline: 1px solid #928374;
+      }
 
-        #inner-box {
-        margin: 5px;
-        border: none;
-        background-color: #282828;
-        }
+      #text {
+        margin: 0;
+        color: inherit;
+      }
 
-        #outer-box {
-        margin: 5px;
-        border: none;
-        background-color: #282828;
-        }
-
-        #scroll {
-        margin: 0px;
-        border: none;
-        }
-
-        #text {
-        margin: 5px;
-        border: none;
-        color: #ebdbb2;
-        }
-
-        #entry:selected {
-        background-color: #1d2021;
-        }
+      #prompt {
+        color: #d79921;          /* yellow */
+        margin-left: 8px;
+        margin-bottom: 4px;
+      }
     '';
-
-
-
   };
   programs.obs-studio = {
     enable = true;
@@ -163,7 +199,7 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "Hack Nerd Font";
+      name = "JetBrains Mono";
       size = 14;
     };
     settings = {
@@ -252,6 +288,9 @@
   home.file."/.config/yazi/yazi.toml".source = ./yazi/yazi.toml;
   home.file."/.config/yazi/keymap.toml".source = ./yazi/keymap.toml;
   home.file."/.config/zathura/zathurarc".source = ./zathura/zathurarc;
+  home.file.".config/rofi/config.rasi".source = ./rofi/config.rasi;
+  home.file.".config/rofi/gruvbox-material.rasi".source = ./rofi/gruvbox-material.rasi;
+
   programs.home-manager.enable = true;
 
 }
