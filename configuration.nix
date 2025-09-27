@@ -213,6 +213,7 @@
     calcurse
     obs-studio
     networkmanagerapplet
+    jetbrains.idea-community
 
     # Nvim dependencies
     lazygit

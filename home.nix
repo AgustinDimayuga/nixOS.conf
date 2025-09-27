@@ -246,12 +246,12 @@
   home.file.".tmux.conf".source = tmux/.tmux.conf;
   home.file."/.config/waybar/config.jsonc".source = waybar/config.jsonc;
   home.file."/.config/waybar/style.css".source = waybar/style.css;
-  programs.home-manager.enable = true;
   home.file."/.config/qutebrowser/config.py".source = qutebrowser/config.py;
   home.file."/.config/hypr/hyprpaper.conf".source = hypr/hyprpaper.conf;
   home.file."/.config/yazi/theme.toml".source = ./yazi/theme.toml;
   home.file."/.config/yazi/yazi.toml".source = ./yazi/yazi.toml;
   home.file."/.config/yazi/keymap.toml".source = ./yazi/keymap.toml;
   home.file."/.config/zathura/zathurarc".source = ./zathura/zathurarc;
+  programs.home-manager.enable = true;
 
 }
