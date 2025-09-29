@@ -158,6 +158,7 @@
     yazi
     pavucontrol
     mpv
+    md-tui
     # Dependencies 
     file
     ffmpeg
