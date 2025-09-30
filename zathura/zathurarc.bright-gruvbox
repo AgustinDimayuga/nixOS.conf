@@ -4,7 +4,7 @@ set notification-warning-bg     "rgba(251,241,199,1)"  # bg
 set notification-warning-fg     "rgba(181,118,20,1)"   # bright:yellow
 set notification-bg             "rgba(251,241,199,1)"  # bg
 set notification-fg             "rgba(121,116,14,1)"   # bright:green
-
+set selection-clipboard clipboard
 set completion-bg               "rgba(213,196,161,1)"  # bg2
 set completion-fg               "rgba(60,56,54,1)"     # fg
 set completion-group-bg         "rgba(235,219,178,1)"  # bg1
