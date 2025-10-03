@@ -175,7 +175,7 @@
       * {
         font-family: "JetBrains Mono", monospace;
         font-size: 12pt;
-        border-radius: 8px;
+        border-radius: @;
       }
 
       window {
@@ -328,9 +328,9 @@
   home.file."/.config/yazi/theme.toml".source = ./yazi/theme.toml;
   home.file."/.config/yazi/yazi.toml".source = ./yazi/yazi.toml;
   home.file."/.config/yazi/keymap.toml".source = ./yazi/keymap.toml;
-  home.file."/.config/zathura/zathurarc".source = ./zathura/zathurarc.bright-gruvbox;
+  home.file."/.config/zathura/zathurarc".source = ./zathura/zathurarc;
   home.file.".config/rofi/config.rasi".source = ./rofi/config.rasi;
-  home.file.".config/rofi/gruvbox-material.rasi".source = ./rofi/gruvbox-material.rasi;
+  home.file.".config/rofi/gruvbox-material.rasi".source = ./rofi/gruvbox.rasi;
 
   programs.home-manager.enable = true;
 
