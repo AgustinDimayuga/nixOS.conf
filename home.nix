@@ -99,7 +99,7 @@
       name = "Notion";
       genericName = "Workspace";
       comment = "Notion web app";
-      exec = "chromium --new-window --app=https://www.notion.so/ --class Notion";
+      exec = "firefox --new-window https://www.notion.so";
       terminal = false;
       categories = [ "Office" "Utility" ];
       icon = ./icons/notion.png;
@@ -244,7 +244,7 @@
       size = 14;
     };
     settings = {
-      background_opacity = 1;
+      background_opacity = 0.9;
       sync_to_monitor = true;
       cursor = "#928374";
       cursor_text_color = "background";
