@@ -11,9 +11,15 @@
       ./hardware-configuration.nix
     ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Disable ssystemd Boot
+  boot.loader.systemd-boot.enable = false;
+  # Enable grub boot
+  boot.loader.grub.enable = true;
+  boot.loader.grub.version = 2;
+  boot.loader.grub.efiSupport = true;
+  boot.loader.grub.efiInstallAsRemovable = true;
+  boot.loader.grub.device = "nodev"; # UEFI installs to the ESP, not an MBR
+  boot.loader.efi.efiSysMountPoint = "/boot";
 
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
@@ -208,7 +214,6 @@
     qutebrowser
     obsidian
     hunspell
-    solaar
     spotify
     google-chrome
     thunderbird
@@ -225,7 +230,6 @@
     ripgrep
     fd
     sqlite
-    stylua
     ast-grep
     python3
     python313Packages.httplib2
