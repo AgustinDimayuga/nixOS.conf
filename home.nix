@@ -109,7 +109,7 @@
       name = "Outlook";
       genericName = "Mail";
       comment = "Outlook web app";
-      exec = "chromium --new-window --app=https://outlook.office.com/ --class Outlook";
+      exec = "firefox --new-window outlook.office.com";
       terminal = false;
       categories = [ "Office" "Email" ];
       icon = ./icons/Outlook.png;
@@ -244,7 +244,7 @@
       size = 14;
     };
     settings = {
-      background_opacity = 0.9;
+      background_opacity = 1;
       sync_to_monitor = true;
       cursor = "#928374";
       cursor_text_color = "background";
