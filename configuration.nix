@@ -251,6 +251,38 @@
 
 
   ];
+  ##################################
+  #      Suspend Then Hibernate   #
+  # ################################
+  swapDevices = [
+    { device = "/swapfile"; }
+  ];
+  boot.resumeDevice = "/dev/disk/by-uuid/747845f1-0ef0-4885-9a84-7f6a041f92f5";
+
+  boot.kernelParams = [
+    "resume=/dev/disk/by-uuid/747845f1-0ef0-4885-9a84-7f6a041f92f5"
+    "resume_offset=198744064"
+    "mem_sleep_default=deep"
+  ];
+  # suspend-then-hibernate after 30 minutes (tweak as you like)
+  systemd.sleep.extraConfig = ''
+    HibernateDelaySec=30min
+    SuspendState=mem
+  '';
+  services.logind.lidSwitch = "suspend-then-hibernate";
+
+  # generally good to have on
+  powerManagement.enable = true;
+
+
+
+
+
+
+
+
+
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
