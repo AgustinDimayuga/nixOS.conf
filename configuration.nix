@@ -15,7 +15,6 @@
   boot.loader.systemd-boot.enable = false;
   # Enable grub boot
   boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.efiInstallAsRemovable = true;
   boot.loader.grub.device = "nodev"; # UEFI installs to the ESP, not an MBR
