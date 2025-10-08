@@ -77,8 +77,8 @@
   };
 
   hardware = {
-    bluetooth.enable = true;
     enableAllFirmware = true;
+    bluetooth.enable = false;
   };
 
   fonts.packages = with pkgs; [
@@ -95,10 +95,10 @@
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
-  services.blueman.enable = true; # Optional GUI
-  services.auto-cpufreq.enable = false;
+  services.blueman.enable = false; # Optional GUI
+  services.auto-cpufreq.enable = true;
   services.tlp.enable = false; ## disable if removing auto-freq
-  services.power-profiles-daemon.enable = true; ## enable if removing auto-freq
+  services.power-profiles-daemon.enable = false; ## enable if removing auto-freq
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
