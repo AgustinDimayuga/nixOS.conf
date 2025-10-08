@@ -134,6 +134,37 @@
       icon = ./icons/Claude.png;
     };
   };
+  # Auto-switch power profile based on AC status
+  systemd.user.services."power-profile-auto" = {
+    Unit = {
+      Description = "Auto switch power profile based on AC power";
+      After = [ "default.target" ];
+    };
+    Service = {
+      Type = "simple";
+      Restart = "always";
+      RestartSec = "10s";
+      ExecStart = pkgs.writeShellScript "power-profile-auto" ''
+        # Wait for power-profiles-daemon to be ready
+        while ! ${pkgs.power-profiles-daemon}/bin/powerprofilesctl get &>/dev/null; do
+          ${pkgs.coreutils}/bin/sleep 2
+        done
+    
+        # Now start the main loop
+        while true; do
+          if ${pkgs.acpi}/bin/acpi -a | ${pkgs.gnugrep}/bin/grep -q "on-line"; then
+            ${pkgs.power-profiles-daemon}/bin/powerprofilesctl set performance 2>/dev/null || true
+          else
+            ${pkgs.power-profiles-daemon}/bin/powerprofilesctl set power-saver 2>/dev/null || true
+          fi
+          ${pkgs.coreutils}/bin/sleep 30
+        done
+      '';
+    };
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+  };
   programs.zsh = {
     enable = true;
     initContent = ''
