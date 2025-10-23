@@ -1,4 +1,4 @@
-{ config, pkgs, zen-browser, ... }:
+{ config, pkgs, zen-browser, helium, ... }:
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -26,6 +26,7 @@
     adwaita-qt
     adwaita-qt6
     gruvbox-gtk-theme
+    (helium.defaultPackage.${pkgs.system}) # <-- use this
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

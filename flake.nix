@@ -12,8 +12,11 @@
       # to have it up-to-date or simply don't specify the nixpkgs input
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    helium = {
+      url = "github:FKouhai/helium2nix/main";
+    };
   };
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, zen-browser, ... }:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, zen-browser, helium, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -29,7 +32,7 @@
       homeConfigurations = {
         agustin = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit zen-browser; }; # <-- This passes inputs to home.nix
+          extraSpecialArgs = { inherit zen-browser helium; }; # <-- This passes inputs to home.nix
           modules = [ ./home.nix ];
         };
       };
