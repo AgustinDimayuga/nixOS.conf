@@ -15,6 +15,7 @@
   home.stateVersion = "25.05"; # Please read the comment before changing.
   imports = [
     # zen-browser.homeModules.twilight
+    ./homeconfigs/wofi.nix
     zen-browser.homeModules.beta
     # Or: inputs.zen-browser.homeModules.twilight-official
   ];
@@ -95,46 +96,6 @@
 
   };
 
-  xdg.desktopEntries = {
-    notion = {
-      name = "Notion";
-      genericName = "Workspace";
-      comment = "Notion web app";
-      exec = "firefox --new-window https://www.notion.so";
-      terminal = false;
-      categories = [ "Office" "Utility" ];
-      icon = ./icons/notion.png;
-    };
-
-    outlook = {
-      name = "Outlook";
-      genericName = "Mail";
-      comment = "Outlook web app";
-      exec = "firefox --new-window outlook.office.com";
-      terminal = false;
-      categories = [ "Office" "Email" ];
-      icon = ./icons/Outlook.png;
-    };
-    chatgpt = {
-      name = "ChatGPT";
-      genericName = "AI Assistant";
-      comment = "ChatGPT web app";
-      # swap 'chromium' for brave/google-chrome/ungoogled-chromium if you prefer
-      exec = "chromium --new-window --app=https://chat.openai.com/ --class ChatGPT";
-      terminal = false;
-      categories = [ "Network" "Utility" ];
-      icon = ./icons/chatGPT.png;
-    };
-    claude = {
-      name = "Claude";
-      genericName = "AI Assistant";
-      comment = "Claude web app";
-      exec = "chromium --new-window --app=https://claude.ai/ --class Claude";
-      terminal = false;
-      categories = [ "Network" "Utility" ];
-      icon = ./icons/Claude.png;
-    };
-  };
   # Auto-switch power profile based on AC status
   # systemd.user.services."power-profile-auto" = {
   #   Unit = {
@@ -178,90 +139,6 @@
     userName = "AgustinDimayuga";
     userEmail = "axocuadi@calpoly.edu";
 
-  };
-  programs.wofi = {
-    enable = true;
-
-    # This writes ~/.config/wofi/config
-    settings = {
-      width = 500;
-      height = 350;
-      location = "center";
-      show = "drun";
-      prompt = "Search...";
-      filter_rate = 100;
-      allow_markup = true;
-      no_actions = true;
-      halign = "fill";
-      orientation = "vertical";
-      content_halign = "fill";
-      insensitive = true;
-      allow_images = true;
-      image_size = 35;
-      gtk_dark = true;
-      dynamic_lines = true;
-    };
-
-    # This writes ~/.config/wofi/style.css
-    style = ''
-      * {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 12pt;
-        border-radius: @;
-      }
-
-      window {
-        margin: 0;
-        padding: 8px;
-        border: 1px solid #928374;
-        background-color: #282828; /* gruvbox bg0 */
-      }
-
-      #outer-box, #inner-box, #scroll {
-        background-color: #282828;
-        border: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      #input {
-        margin: 8px;
-        padding: 8px 10px;
-        border: none;
-        color: #ebdbb2;          /* fg1 */
-        background-color: #1d2021; /* bg0_h */
-        box-shadow: none;
-      }
-
-      #img {
-        margin-right: 8px;
-      }
-
-      #entry {
-        margin: 4px 8px;
-        padding: 8px 10px;
-        border: none;
-        background-color: transparent;
-        color: #ebdbb2;
-      }
-
-      #entry:selected {
-        background-color: #1d2021;
-        color: #fbf1c7;          /* fg0 */
-        outline: 1px solid #928374;
-      }
-
-      #text {
-        margin: 0;
-        color: inherit;
-      }
-
-      #prompt {
-        color: #d79921;          /* yellow */
-        margin-left: 8px;
-        margin-bottom: 4px;
-      }
-    '';
   };
   programs.obs-studio = {
     enable = true;
