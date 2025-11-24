@@ -115,7 +115,6 @@
     config.common.default = "*";
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.agustin = {

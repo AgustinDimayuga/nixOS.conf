@@ -30,7 +30,7 @@
             nixos-hardware.nixosModules.framework-amd-ai-300-series
             ./configuration.nix
             ./hardware-configuration.nix
-            ./hosts/laptop/suspendThenHibernate.nix
+            ./hosts/laptop/laptopConfig.nix
 
           ];
         };
