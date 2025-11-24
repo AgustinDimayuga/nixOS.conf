@@ -3,7 +3,6 @@
   ##################################
   #      Suspend Then Hibernate   #
   # ################################
-  networking.hostName = "laptop";
   swapDevices = [
     { device = "/swapfile"; }
   ];
@@ -34,4 +33,19 @@
 
   # generally good to have on
   powerManagement.enable = true;
+
+
+  ## powermpowerManagement
+  services.auto-cpufreq.enable = true;
+  services.tlp.enable = false; ## disable if removing auto-freq
+  services.power-profiles-daemon.enable = false; ## enable if removing auto-freq
+  ## Touchpad
+  services.libinput = {
+    enable = true;
+    touchpad = {
+      tapping = true;
+      naturalScrolling = true;
+      disableWhileTyping = true;
+    };
+  };
 }

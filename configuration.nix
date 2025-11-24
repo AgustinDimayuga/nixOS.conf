@@ -36,7 +36,7 @@
   };
   programs.kdeconnect.enable = true;
   services.fwupd.enable = true;
-  #networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
@@ -95,9 +95,6 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
   services.blueman.enable = false; # Optional GUI
-  services.auto-cpufreq.enable = true;
-  services.tlp.enable = false; ## disable if removing auto-freq
-  services.power-profiles-daemon.enable = false; ## enable if removing auto-freq
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
@@ -119,14 +116,6 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput = {
-    enable = true;
-    touchpad = {
-      tapping = true;
-      naturalScrolling = true;
-      disableWhileTyping = true;
-    };
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.agustin = {
@@ -214,9 +203,6 @@
     qutebrowser
     obsidian
     hunspell
-    spotify
-    google-chrome
-    thunderbird
     calcurse
     obs-studio
     networkmanagerapplet
