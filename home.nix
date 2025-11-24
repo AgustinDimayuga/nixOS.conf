@@ -19,6 +19,7 @@
     ./homeconfigs/wofi.nix
     ./homeconfigs/kitty.nix
     ./homeconfigs/zshrc.nix
+    ./homeconfigs/obs.nix
     ./homeconfigs/browserapplications.nix
     zen-browser.homeModules.beta
     # Or: inputs.zen-browser.homeModules.twilight-official
@@ -136,12 +137,7 @@
     userName = "AgustinDimayuga";
     userEmail = "axocuadi@calpoly.edu";
   };
-  programs.obs-studio = {
-    enable = true;
-    plugins = with pkgs.obs-studio-plugins; [
-      wlrobs
-    ];
-  };
+
   dconf.enable = true;
   dconf.settings = {
     "org/gnome/desktop/interface" = {
