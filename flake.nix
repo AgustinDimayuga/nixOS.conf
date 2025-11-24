@@ -24,11 +24,27 @@
     in
     {
       nixosConfigurations = {
-        nixos = lib.nixosSystem {
+        laptop = lib.nixosSystem {
           inherit system;
-          modules = [ nixos-hardware.nixosModules.framework-amd-ai-300-series ./configuration.nix ];
+          modules = [
+            nixos-hardware.nixosModules.framework-amd-ai-300-series
+            ./configuration.nix
+            ./hardware-configuration.nix
+            ./hosts/laptop/suspendThenHibernate.nix
+
+          ];
+        };
+        pc = lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./configuration.nix
+            ./hardware-configuration.nix
+          ];
         };
       };
+
+
+
       homeConfigurations = {
         agustin = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
