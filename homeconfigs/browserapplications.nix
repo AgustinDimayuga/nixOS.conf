@@ -8,7 +8,7 @@
       exec = "firefox --new-window https://www.notion.so";
       terminal = false;
       categories = [ "Office" "Utility" ];
-      icon = ./icons/notion.png;
+      icon = ../icons/notion.png;
     };
 
     outlook = {
@@ -18,7 +18,7 @@
       exec = "firefox --new-window outlook.office.com";
       terminal = false;
       categories = [ "Office" "Email" ];
-      icon = ./icons/Outlook.png;
+      icon = ../icons/Outlook.png;
     };
     chatgpt = {
       name = "ChatGPT";
@@ -28,7 +28,8 @@
       exec = "chromium --new-window --app=https://chat.openai.com/ --class ChatGPT";
       terminal = false;
       categories = [ "Network" "Utility" ];
-      icon = ./icons/chatGPT.png;
+      icon = ../icons/chatGPT.png;
+
     };
     claude = {
       name = "Claude";
@@ -37,7 +38,7 @@
       exec = "chromium --new-window --app=https://claude.ai/ --class Claude";
       terminal = false;
       categories = [ "Network" "Utility" ];
-      icon = ./icons/Claude.png;
+      icon = ../icons/Claude.png;
     };
   };
 }
