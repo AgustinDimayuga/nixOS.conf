@@ -29,19 +29,40 @@
           modules = [
             nixos-hardware.nixosModules.framework-amd-ai-300-series
             ./configuration.nix
-            ./hardware-configuration.nix
             ./hosts/laptop/laptopConfig.nix
 
           ];
         };
-        pc = lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./configuration.nix
-            ./hardware-configuration.nix
-          ];
-        };
-      };
+
+    pc = lib.nixosSystem {
+      inherit system;
+
+      # make inputs available to modules (incl. home.nix)
+      specialArgs = { inherit zen-browser helium; };
+
+      modules = [
+        ./configuration.nix
+        ./hosts/pc/pc-hardware-configuration.nix
+        ./hosts/pc/nvidia.nix
+
+        # ENABLE Home Manager as a NixOS module here:
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+	  home-manager.backupFileExtension = "hm-bak";
+
+          # pass extra args to your home.nix (alternative to specialArgs)
+          home-manager.extraSpecialArgs = { inherit zen-browser helium; };
+
+          home-manager.users.agustin = {
+            imports = [ ./home.nix ];
+            home.stateVersion = "25.05";
+          };
+        }
+      ];
+    };
+
 
 
 
@@ -53,4 +74,6 @@
         };
       };
     };
-}    
+
+};
+}

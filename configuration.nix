@@ -8,8 +8,9 @@
   imports =
     [
       # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+
     ];
+
 
   # Disable ssystemd Boot
   boot.loader.systemd-boot.enable = false;
