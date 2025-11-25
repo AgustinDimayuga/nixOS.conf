@@ -29,7 +29,7 @@
           modules = [
             nixos-hardware.nixosModules.framework-amd-ai-300-series
             ./configuration.nix
-            ./hardware-configuration.nix
+            ./hosts/laptop/hardware-configuration.nix
             ./hosts/laptop/laptopConfig.nix
 
           ];
