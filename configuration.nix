@@ -64,7 +64,22 @@
   #
   #
   #### Allow GPG Key to be unlocked when start up. This is used for neomutt and mutt wizard. 
-  security.pam.services.login.gnupg.enable = true;
+  security.pam.services = {
+    # still unlock GPG when logging in via `login` (TTY)
+    login.gnupg.enable = true;
+
+    # NEW: unlock GPG when authenticating via hyprlock
+    hyprlock.gnupg.enable = true;
+  };
+
+  # Auto-login on tty1 and start Hyprland
+  services.getty.autologinUser = "agustin";
+
+  environment.loginShellInit = ''
+    if [ "$(tty)" = "/dev/tty1" ]; then
+      exec Hyprland
+    fi
+  '';
 
   programs.hyprland = {
     enable = true;
@@ -198,6 +213,7 @@
     wayclip
     wl-clipboard
     hyprpaper
+    hyprlock
     # Applications
     vscode
     qutebrowser

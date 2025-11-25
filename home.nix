@@ -161,6 +161,7 @@
 
   #Turn on Dark Theme 
   home.file."/.config/hypr/hyprland.conf".source = hypr/hyprland.conf;
+  home.file."/.config/hypr/hyprlock.conf".source = hypr/hyprlock.conf;
   home.file.".tmux.conf".source = tmux/.tmux.conf;
   home.file."/.config/waybar/config.jsonc".source = waybar/config.jsonc;
   home.file."/.config/waybar/style.css".source = waybar/style.css;
