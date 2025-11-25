@@ -45,25 +45,8 @@
             ./configuration.nix
             ./hosts/pc/pc-hardware-configuration.nix
             ./hosts/pc/nvidia.nix
-
-            # ENABLE Home Manager as a NixOS module here:
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "hm-bak";
-
-              # pass extra args to your home.nix (alternative to specialArgs)
-              home-manager.extraSpecialArgs = { inherit zen-browser helium; };
-
-              home-manager.users.agustin = {
-                imports = [ ./home.nix ];
-                home.stateVersion = "25.05";
-              };
-            }
           ];
         };
-
 
 
 
