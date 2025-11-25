@@ -7,11 +7,12 @@
     "custom/calcurse"
   ],
   "modules-center": [
-    "clock"/*,
+    "clock" /*,
     "custom/playerctl"*/
   ],
   "modules-right": [
     "tray",
+    "idle_inhibitor",
     "temperature",
     "backlight",
     "pulseaudio",
@@ -111,14 +112,14 @@
     "on-click": "volume.sh --toggle",
     "on-click-right": "pavucontrol"
   },
-  // "idle_inhibitor": {
-  //   "format": "{icon}",
-  //   "format-icons": {
-  //        "activated": "󰈈 ",
-  //     "deactivated": "󰈉 "
-  //    },
-  //    "tooltip": false
-  // },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰈈 ",
+      "deactivated": "󰈉 "
+    },
+    "tooltip": false
+  },
   "custom/calcurse": {
     "format": "{}",
     "exec": "~/.config/calcurse/countdown.sh",
