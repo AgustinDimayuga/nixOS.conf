@@ -35,46 +35,46 @@
           ];
         };
 
-    pc = lib.nixosSystem {
-      inherit system;
+        pc = lib.nixosSystem {
+          inherit system;
 
-      # make inputs available to modules (incl. home.nix)
-      specialArgs = { inherit zen-browser helium; };
+          # make inputs available to modules (incl. home.nix)
+          specialArgs = { inherit zen-browser helium; };
 
-      modules = [
-        ./configuration.nix
-        ./hosts/pc/pc-hardware-configuration.nix
-        ./hosts/pc/nvidia.nix
+          modules = [
+            ./configuration.nix
+            ./hosts/pc/pc-hardware-configuration.nix
+            ./hosts/pc/nvidia.nix
 
-        # ENABLE Home Manager as a NixOS module here:
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-	  home-manager.backupFileExtension = "hm-bak";
+            # ENABLE Home Manager as a NixOS module here:
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "hm-bak";
 
-          # pass extra args to your home.nix (alternative to specialArgs)
-          home-manager.extraSpecialArgs = { inherit zen-browser helium; };
+              # pass extra args to your home.nix (alternative to specialArgs)
+              home-manager.extraSpecialArgs = { inherit zen-browser helium; };
 
-          home-manager.users.agustin = {
-            imports = [ ./home.nix ];
-            home.stateVersion = "25.05";
+              home-manager.users.agustin = {
+                imports = [ ./home.nix ];
+                home.stateVersion = "25.05";
+              };
+            }
+          ];
+        };
+
+
+
+
+        homeConfigurations = {
+          agustin = home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            extraSpecialArgs = { inherit zen-browser helium; }; # <-- This passes inputs to home.nix
+            modules = [ ./home.nix ];
           };
-        }
-      ];
-    };
-
-
-
-
-      homeConfigurations = {
-        agustin = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = { inherit zen-browser helium; }; # <-- This passes inputs to home.nix
-          modules = [ ./home.nix ];
         };
       };
-    };
 
-};
+    };
 }
