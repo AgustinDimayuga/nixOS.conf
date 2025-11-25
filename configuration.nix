@@ -232,6 +232,8 @@
     stylua
     fastfetch
     zathura
+    ## NixOS
+    home-manager
 
 
 
