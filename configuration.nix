@@ -206,14 +206,15 @@
     hyprutils
     hyprgraphics
     hyprshot
+    hyprpaper
+    hyprlock
+    hypridle
     playerctl
     wofi
     rofi-wayland
     waybar
     wayclip
     wl-clipboard
-    hyprpaper
-    hyprlock
     # Applications
     vscode
     qutebrowser
