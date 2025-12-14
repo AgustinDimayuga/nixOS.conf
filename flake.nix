@@ -47,6 +47,18 @@
             ./hosts/pc/nvidia.nix
           ];
         };
+        gamingPC = lib.nixosSystem {
+          inherit system;
+
+          # make inputs available to modules (incl. home.nix)
+          specialArgs = { inherit zen-browser helium; };
+
+          modules = [
+            ./configuration.nix
+            ./hosts/gamingPC/hardware-configuration.nix
+            ./hosts/pc/nvidia.nix
+          ];
+        };
 
 
 

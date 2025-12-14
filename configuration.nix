@@ -5,11 +5,11 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-    ];
-
+  imports = [
+    # Include the results of the hardware scan.
+    #
+    #
+  ];
 
   # Disable ssystemd Boot
   boot.loader.systemd-boot.enable = false;
@@ -40,7 +40,8 @@
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable =
+    true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
@@ -103,7 +104,6 @@
     jetbrains-mono
   ];
 
-
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -124,21 +124,16 @@
   };
   xdg.portal = {
     enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
-    ];
+    extraPortals =
+      [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
     config.common.default = "*";
   };
-
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.agustin = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      tree
-    ];
+    packages = with pkgs; [ tree ];
   };
 
   programs.firefox.enable = true;
@@ -252,19 +247,7 @@
     ## NixOS
     home-manager
 
-
-
   ];
-
-
-
-
-
-
-
-
-
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
