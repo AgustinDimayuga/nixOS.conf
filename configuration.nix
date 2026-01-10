@@ -148,7 +148,6 @@
     wget
     neovim
     git
-    glxinfo
     kitty
     alacritty
     pfetch
@@ -206,7 +205,7 @@
     hypridle
     playerctl
     wofi
-    rofi-wayland
+    rofi
     waybar
     wayclip
     wl-clipboard
