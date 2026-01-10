@@ -1,4 +1,4 @@
-{config, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
   ##################################
   #      Suspend Then Hibernate   #
@@ -22,10 +22,15 @@
     lidSwitch = "suspend-then-hibernate";
     lidSwitchExternalPower = "suspend-then-hibernate";
     lidSwitchDocked = "suspend-then-hibernate";
-    extraConfig = ''
-      LidSwitchIgnoreInhibited=yes
-      HandleLidSwitch=suspend-then-hibernate
-    '';
+
+    settings = {
+      Login = {
+        LidSwitchIgnoreInhibited = "yes";
+        HandleLidSwitch = "suspend-then-hibernate";
+        HandleLidSwitchExternalPower = "suspend-then-hibernate";
+        HandleLidSwitchDocked = "suspend-then-hibernate";
+      };
+    };
   };
 
   # Disable acpid completely (Hyprland can interfere with it)
