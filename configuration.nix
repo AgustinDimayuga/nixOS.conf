@@ -219,7 +219,8 @@
     obs-studio
     networkmanagerapplet
     jetbrains.idea-community
-    ungoogled-chromium
+    discord
+    zathura
 
     # Nvim dependencies
     lazygit
@@ -243,7 +244,7 @@
     lua-language-server
     stylua
     fastfetch
-    zathura
+    clang-tools
     ## NixOS
     home-manager
 

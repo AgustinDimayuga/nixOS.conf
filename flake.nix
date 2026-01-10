@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
@@ -57,19 +57,20 @@
             ./configuration.nix
             ./hosts/gamingPC/hardware-configuration.nix
             ./hosts/pc/nvidia.nix
+            ./hosts/gamingPC/gamingConfig.nix
           ];
         };
 
 
 
       };
-        homeConfigurations = {
-          agustin = home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            extraSpecialArgs = { inherit zen-browser helium; }; # <-- This passes inputs to home.nix
-            modules = [ ./home.nix ];
-          };
+      homeConfigurations = {
+        agustin = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = { inherit zen-browser helium; }; # <-- This passes inputs to home.nix
+          modules = [ ./home.nix ];
         };
+      };
 
     };
 }
