@@ -149,6 +149,7 @@
     neovim
     git
     kitty
+    kitty.terminfo
     alacritty
     pfetch
     brightnessctl
@@ -244,6 +245,7 @@
     stylua
     fastfetch
     clang-tools
+
     ## NixOS
     home-manager
 
