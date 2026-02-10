@@ -245,6 +245,7 @@
     stylua
     fastfetch
     clang-tools
+    neovim-node-client
 
     ## NixOS
     home-manager
