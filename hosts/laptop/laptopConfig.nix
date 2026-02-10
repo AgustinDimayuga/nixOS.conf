@@ -19,16 +19,16 @@
   '';
   # Make sure systemd-logind has control
   services.logind = {
-    lidSwitch = "suspend-then-hibernate";
-    lidSwitchExternalPower = "suspend-then-hibernate";
-    lidSwitchDocked = "suspend-then-hibernate";
-
     settings = {
       Login = {
         LidSwitchIgnoreInhibited = "yes";
         HandleLidSwitch = "suspend-then-hibernate";
         HandleLidSwitchExternalPower = "suspend-then-hibernate";
         HandleLidSwitchDocked = "suspend-then-hibernate";
+        lidSwitch = "suspend-then-hibernate";
+        lidSwitchExternalPower = "suspend-then-hibernate";
+        lidSwitchDocked = "suspend-then-hibernate";
+
       };
     };
   };
