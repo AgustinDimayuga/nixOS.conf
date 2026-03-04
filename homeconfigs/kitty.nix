@@ -4,8 +4,8 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "JetBrains Mono";
-      size = 14;
+      name = "Hack Nerd Font";
+      size = 16;
     };
     settings = {
       background_opacity = 1;
