@@ -14,10 +14,13 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
   imports = [
+    #Dracula
+    ./homeconfigs/kitty.dracula.nix
+    #Gruvbox
+    #./homeconfigs/kitty.nix
 
     # zen-browser.homeModules.twilight
     ./homeconfigs/wofi.nix
-    ./homeconfigs/kitty.nix
     ./homeconfigs/zshrc.nix
     ./homeconfigs/obs.nix
     ./homeconfigs/browserapplications.nix
@@ -159,22 +162,33 @@
   programs.yazi.enable = true;
   programs.zathura.enable = true;
 
-  #Turn on Dark Theme 
   home.file."/.config/hypr/hyprland.conf".source = hypr/hyprland.conf;
   home.file."/.config/hypr/hyprlock.conf".source = hypr/hyprlock.conf;
   home.file."/.config/hypr/hypridle.conf".source = hypr/hypridle.conf;
-  home.file.".tmux.conf".source = tmux/.tmux.conf;
   home.file."/.config/waybar/config.jsonc".source = waybar/config.jsonc;
-  home.file."/.config/waybar/style.css".source = waybar/style.css;
+
   home.file."/.config/qutebrowser/config.py".source = qutebrowser/config.py;
-  home.file."/.config/hypr/hyprpaper.conf".source = hypr/hyprpaper.conf;
-  home.file."/.config/yazi/theme.toml".source = ./yazi/theme.toml;
   home.file."/.config/yazi/yazi.toml".source = ./yazi/yazi.toml;
   home.file."/.config/yazi/keymap.toml".source = ./yazi/keymap.toml;
-  home.file."/.config/zathura/zathurarc".source = ./zathura/zathurarc;
-  home.file.".config/rofi/config.rasi".source = ./rofi/config.rasi;
-  home.file.".config/rofi/gruvbox-material.rasi".source = ./rofi/gruvbox.rasi;
+  home.file."/.config/hypr/hyprpaper.conf".source = hypr/hyprpaper.conf;
 
+  #Turn on Gruvbox
+
+
+  #home.file.".tmux.conf".source = tmux/.tmux.conf;
+  #home.file.".config/rofi/gruvbox-material.rasi".source = ./rofi/gruvbox.rasi;
+  #home.file."/.config/waybar/style.css".source = waybar/style.css;
+  #home.file."/.config/zathura/zathurarc".source = ./zathura/zathurarc;
+  #home.file."/.config/yazi/theme.toml".source = ./yazi/theme.toml;
+  #home.file.".config/rofi/config.rasi".source = ./rofi/config.rasi;
+
+  ## Dracula Theme
+  home.file."/.config/waybar/style.css".source = waybar/style.dracula.css;
+  home.file."/.config/yazi/theme.toml".source = ./yazi/theme.dracula.toml;
+  home.file."/.config/zathura/zathurarc".source = ./zathura/zathurarc.dracula;
+  home.file.".config/rofi/gruvbox-material.rasi".source = ./rofi/dracula.rasi;
+  home.file.".config/rofi/config.rasi".source = ./rofi/config.dracula.rasi;
+  home.file.".tmux.conf".source = ./tmux/.tmux.dracula.conf;
   programs.home-manager.enable = true;
 
 }
