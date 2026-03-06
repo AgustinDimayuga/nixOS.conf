@@ -101,6 +101,7 @@
     font-awesome
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.nerd-fonts.hack
+    pkgs.nerd-fonts.fira-code
     jetbrains-mono
   ];
 
@@ -191,6 +192,7 @@
     nemo
     clickgen
     yarn
+    gnumake
     # Tmux Dependencies
     tmux
     acpi
