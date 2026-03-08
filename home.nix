@@ -160,6 +160,11 @@
     enable = true;
   };
   programs.yazi.enable = true;
+  # ensure fontconfig is enabled so fc-cache runs on activation
+  fonts.fontconfig.enable = true;
+
+  # symlink the whole fonts folder into ~/.local/share/fonts/MonoLisa
+  home.file.".local/share/fonts/MonoLisa".source = ./fonts;
   programs.zathura.enable = true;
 
   home.file."/.config/hypr/hyprland.conf".source = hypr/hyprland.conf;

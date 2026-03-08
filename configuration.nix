@@ -60,6 +60,9 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
+  # 
+  #
+  #
 
   # Enable Hyprland
   #
@@ -89,7 +92,6 @@
   };
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-
   };
 
   hardware = {
@@ -171,6 +173,7 @@
     jq
     poppler
     zoxide
+    typescript
     curl
     isync
     msmtp
@@ -223,6 +226,7 @@
     jetbrains.idea-community
     discord
     zathura
+    mongodb-compass
 
     # Nvim dependencies
     lazygit

@@ -3,7 +3,7 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "Hack Nerd Font";
+      name = "MonoLisa Variable";
       size = 16;
     };
     settings = {
