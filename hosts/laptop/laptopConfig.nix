@@ -10,7 +10,7 @@
 
   boot.kernelParams = [
     "resume=/dev/disk/by-uuid/747845f1-0ef0-4885-9a84-7f6a041f92f5"
-    "resume_offset=198744064"
+    "resume_offset=48521"
     "mem_sleep_default=s2idle"
   ];
   # suspend-then-hibernate after 30 minutes (tweak as you like)
