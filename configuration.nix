@@ -2,12 +2,18 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config
+, lib
+, pkgs
+, ...
+}:
 
 {
   imports = [
     # Include the results of the hardware scan.
     #
+    #
+
     #
   ];
 
@@ -32,7 +38,10 @@
     ohMyZsh = {
       enable = true;
       theme = "robbyrussell";
-      plugins = [ "git" "web-search" ];
+      plugins = [
+        "git"
+        "web-search"
+      ];
     };
   };
   programs.kdeconnect.enable = true;
@@ -40,8 +49,7 @@
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable =
-    true; # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
@@ -60,14 +68,14 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-  # 
+  #
   #
   #
 
   # Enable Hyprland
   #
   #
-  #### Allow GPG Key to be unlocked when start up. This is used for neomutt and mutt wizard. 
+  #### Allow GPG Key to be unlocked when start up. This is used for neomutt and mutt wizard.
   security.pam.services = {
     # still unlock GPG when logging in via `login` (TTY)
     login.gnupg.enable = true;
@@ -127,8 +135,10 @@
   };
   xdg.portal = {
     enable = true;
-    extraPortals =
-      [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+    ];
     config.common.default = "*";
   };
 
@@ -167,7 +177,7 @@
     pavucontrol
     mpv
     md-tui
-    # Dependencies 
+    # Dependencies
     file
     ffmpeg
     jq
@@ -300,5 +310,8 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.05"; # Did you read the comment?
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }

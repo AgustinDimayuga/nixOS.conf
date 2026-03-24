@@ -137,9 +137,15 @@
   # };
   programs.git = {
     enable = true;
-    userName = "AgustinDimayuga";
-    userEmail = "axocuadi@calpoly.edu";
   };
+  programs.git.settings.user = {
+    email = "axocuadi@calpoly.edu";
+    name = "AgustinDimayuga";
+
+
+  };
+
+
 
   dconf.enable = true;
   dconf.settings = {
