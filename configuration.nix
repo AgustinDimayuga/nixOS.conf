@@ -184,6 +184,7 @@
     poppler
     zoxide
     typescript
+    nodePackages.typescript-language-server
     curl
     isync
     msmtp
@@ -237,6 +238,8 @@
     discord
     zathura
     mongodb-compass
+    superTux
+
 
     # Nvim dependencies
     lazygit

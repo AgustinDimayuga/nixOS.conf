@@ -55,6 +55,17 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+  programs.emacs = {
+    enable = true;
+    package =
+      ((pkgs.emacsPackagesFor pkgs.emacs-pgtk).emacsWithPackages (epkgs: with epkgs; [
+        treesit-grammars.with-all-grammars
+        tree-sitter-langs
+      ]));
+    extraConfig = ''
+      (setq standard-indent 2)
+    '';
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
