@@ -29,12 +29,20 @@
   ];
   programs.zen-browser.enable = true;
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnsupportedSystem = true;
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
     adwaita-qt
     adwaita-qt6
     gruvbox-gtk-theme
+    ## EDITOR STUFF
+    prettier
+    black
+    uv
+    docker
+    dbeaver-bin
+    texliveFull
     (helium.defaultPackage.${pkgs.system}) # <-- use this
 
     # # Adds the 'hello' command to your environment. It prints a friendly

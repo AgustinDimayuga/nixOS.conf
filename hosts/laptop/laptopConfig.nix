@@ -55,30 +55,30 @@
       disableWhileTyping = true;
     };
   };
-  hardware.fw-fanctrl = {
-    enable = true;
-
-    config = {
-      defaultStrategy = "cool-bottom";
-
-      strategies = {
-        "cool-bottom" = {
-          fanSpeedUpdateFrequency = 3;
-          movingAverageInterval = 12;
-
-          speedCurve = [
-            { temp = 0; speed = 25; }
-            { temp = 35; speed = 30; }
-            { temp = 40; speed = 38; }
-            { temp = 50; speed = 50; }
-            { temp = 60; speed = 65; }
-            { temp = 70; speed = 80; }
-            { temp = 78; speed = 92; }
-            { temp = 85; speed = 100; }
-          ];
-        };
-      };
-    };
-  };
+  # hardware.fw-fanctrl = {
+  #   enable = true;
+  #
+  #   config = {
+  #     defaultStrategy = "cool-bottom";
+  #
+  #     strategies = {
+  #       "cool-bottom" = {
+  #         fanSpeedUpdateFrequency = 3;
+  #         movingAverageInterval = 12;
+  #
+  #         speedCurve = [
+  #           { temp = 0; speed = 25; }
+  #           { temp = 35; speed = 30; }
+  #           { temp = 40; speed = 38; }
+  #           { temp = 50; speed = 50; }
+  #           { temp = 60; speed = 65; }
+  #           { temp = 70; speed = 80; }
+  #           { temp = 78; speed = 92; }
+  #           { temp = 85; speed = 100; }
+  #         ];
+  #       };
+  #     };
+  #   };
+  # };
 }
   
