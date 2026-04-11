@@ -39,6 +39,7 @@
     ## EDITOR STUFF
     prettier
     black
+    pyright
     uv
     docker
     dbeaver-bin
@@ -110,9 +111,10 @@
     ##EDITOR = "nvim";
     HYPRSHOT_DIR = "${config.home.homeDirectory}/Pictures/Screenshots";
     # switch to gruvbox pkgs.gruvbox-dark-gtk if failure
-    GTK_THEME = "Gruvbox-Dark";
+    #GTK_THEME = "Gruvbox-Dark";
     XCURSOR_THEME = "macOS";
     XCURSOR_SIZE = 20;
+    GTK_THEME = "Dracula";
   };
   home.pointerCursor = {
     package = pkgs.apple-cursor;
@@ -176,10 +178,16 @@
   gtk = {
     enable = true;
     # switch to gruvbox pkgs.gruvbox-dark-gtk if failure
-    theme.package = pkgs.gruvbox-gtk-theme;
-    theme.name = "Gruvbox-Dark-hdpi";
-    iconTheme.package = pkgs.gruvbox-gtk-theme;
-    iconTheme.name = "Gruvbox-Dark";
+    #theme.package = pkgs.gruvbox-gtk-theme;
+    #theme.name = "Gruvbox-Dark-hdpi";
+    #iconTheme.package = pkgs.gruvbox-gtk-theme;
+    #iconTheme.name = "Gruvbox-Dark";
+    #
+    theme.package = pkgs.dracula-theme;
+    theme.name = "Dracula";
+
+    iconTheme.package = pkgs.dracula-icon-theme;
+    iconTheme.name = "Dracula";
   };
   qt = {
     enable = true;
