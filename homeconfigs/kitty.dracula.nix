@@ -4,7 +4,7 @@
     enable = true;
     font = {
       name = "MonoLisa Variable";
-      size = 16;
+      size = 12;
     };
     settings = {
       background_opacity = 1;

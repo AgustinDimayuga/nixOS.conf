@@ -1,7 +1,7 @@
 * {
   border: none;
   border-radius: 0px;
-  font-family: JetBrainsMono Nerd Font;
+  font-family: MonoLisa Variable;
   font-weight: bold;
   font-size: 15px;
   min-height: 0;
@@ -84,13 +84,11 @@ tooltip {
 }
 
 #network {
-  color: #8be9fd;
   margin-right: 6px;
 }
 
 #pulseaudio {
   margin-right: 6px;
-  color: #8be9fd;
 }
 
 #custom-power {
@@ -99,7 +97,6 @@ tooltip {
 }
 
 #clock {
-  color: #8be9fd;
   margin-right: 6px;
 }
 
