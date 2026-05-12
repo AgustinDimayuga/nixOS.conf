@@ -17,7 +17,7 @@
   ];
   # suspend-then-hibernate after 30 minutes (tweak as you like)
   systemd.sleep.extraConfig = ''
-    HibernateDelaySec=30min
+    HibernateDelaySec=1min
   '';
   # Make sure systemd-logind has control
   services.logind = {
@@ -43,7 +43,7 @@
 
 
   ## powermpowerManagement
-  services.auto-cpufreq.enable = true;
+  services.auto-cpufreq.enable = false;
   services.tlp.enable = false; ## disable if removing auto-freq
   services.power-profiles-daemon.enable = false; ## enable if removing auto-freq
   ## Touchpad
@@ -55,30 +55,30 @@
       disableWhileTyping = true;
     };
   };
-  # hardware.fw-fanctrl = {
-  #   enable = true;
-  #
-  #   config = {
-  #     defaultStrategy = "cool-bottom";
-  #
-  #     strategies = {
-  #       "cool-bottom" = {
-  #         fanSpeedUpdateFrequency = 3;
-  #         movingAverageInterval = 12;
-  #
-  #         speedCurve = [
-  #           { temp = 0; speed = 25; }
-  #           { temp = 35; speed = 30; }
-  #           { temp = 40; speed = 38; }
-  #           { temp = 50; speed = 50; }
-  #           { temp = 60; speed = 65; }
-  #           { temp = 70; speed = 80; }
-  #           { temp = 78; speed = 92; }
-  #           { temp = 85; speed = 100; }
-  #         ];
-  #       };
-  #     };
-  #   };
-  # };
+  hardware.fw-fanctrl = {
+    enable = true;
+
+    config = {
+      defaultStrategy = "cool-bottom";
+
+      strategies = {
+        "cool-bottom" = {
+          fanSpeedUpdateFrequency = 3;
+          movingAverageInterval = 12;
+
+          speedCurve = [
+            { temp = 0; speed = 25; }
+            { temp = 35; speed = 30; }
+            { temp = 40; speed = 38; }
+            { temp = 50; speed = 50; }
+            { temp = 60; speed = 65; }
+            { temp = 70; speed = 80; }
+            { temp = 78; speed = 92; }
+            { temp = 85; speed = 100; }
+          ];
+        };
+      };
+    };
+  };
 }
   
