@@ -1,4 +1,4 @@
-{ config, pkgs, zen-browser, helium, ... }:
+{ config, pkgs, zen-browser, helium, terminaltexteffects, ... }:
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -24,6 +24,7 @@
     ./homeconfigs/zshrc.nix
     ./homeconfigs/obs.nix
     ./homeconfigs/browserapplications.nix
+    ./homeconfigs/screensaver.nix
     zen-browser.homeModules.beta
     # Or: inputs.zen-browser.homeModules.twilight-official
   ];
@@ -36,6 +37,7 @@
     adwaita-qt
     adwaita-qt6
     gruvbox-gtk-theme
+    terminaltexteffects.packages.${pkgs.system}.default
     ## EDITOR STUFF
     prettier
     black
