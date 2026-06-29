@@ -6,6 +6,8 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    terminaltexteffects.url = "github:ChrisBuilds/terminaltexteffects";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
@@ -16,7 +18,7 @@
       url = "github:FKouhai/helium2nix/main";
     };
   };
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, zen-browser, helium, ... }:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, zen-browser, helium, terminaltexteffects, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -67,7 +69,7 @@
       homeConfigurations = {
         agustin = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit zen-browser helium; }; # <-- This passes inputs to home.nix
+          extraSpecialArgs = { inherit zen-browser helium terminaltexteffects; }; # <-- This passes inputs to home.nix
           modules = [ ./home.nix ];
         };
       };
