@@ -25,7 +25,7 @@
       genericName = "AI Assistant";
       comment = "ChatGPT web app";
       # swap 'chromium' for brave/google-chrome/ungoogled-chromium if you prefer
-      exec = "chromium --new-window --app=https://chat.openai.com/ --class ChatGPT";
+      exec = "firefox --new-window https://chat.openai.com/";
       terminal = false;
       categories = [ "Network" "Utility" ];
       icon = ../icons/chatGPT.png;
@@ -35,7 +35,7 @@
       name = "Claude";
       genericName = "AI Assistant";
       comment = "Claude web app";
-      exec = "chromium --new-window --app=https://claude.ai/ --class Claude";
+      exec = "firefox --new-window https://claude.ai/";
       terminal = false;
       categories = [ "Network" "Utility" ];
       icon = ../icons/Claude.png;
