@@ -17,7 +17,7 @@
   ];
   # suspend-then-hibernate after 30 minutes (tweak as you like)
   systemd.sleep.extraConfig = ''
-    HibernateDelaySec=1min
+    HibernateDelaySec=10min
   '';
   # Make sure systemd-logind has control
   services.logind = {
