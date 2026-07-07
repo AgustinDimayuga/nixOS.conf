@@ -184,7 +184,7 @@
     poppler
     zoxide
     typescript
-    nodePackages.typescript-language-server
+    typescript-language-server
     curl
     isync
     msmtp
@@ -234,11 +234,10 @@
     calcurse
     obs-studio
     networkmanagerapplet
-    jetbrains.idea-community
     discord
     zathura
     mongodb-compass
-    superTux
+    supertux
 
 
     # Nvim dependencies

@@ -16,9 +16,9 @@
     "mem_sleep_default=s2idle"
   ];
   # suspend-then-hibernate after 30 minutes (tweak as you like)
-  systemd.sleep.extraConfig = ''
-    HibernateDelaySec=10min
-  '';
+  systemd.sleep.settings.Sleep = {
+    HibernateDelaySec = "10min";
+  };
   # Make sure systemd-logind has control
   services.logind = {
     settings = {
