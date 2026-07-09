@@ -44,7 +44,6 @@
       ];
     };
   };
-  programs.kdeconnect.enable = true;
   services.fwupd.enable = true;
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -75,14 +74,6 @@
   # Enable Hyprland
   #
   #
-  #### Allow GPG Key to be unlocked when start up. This is used for neomutt and mutt wizard.
-  security.pam.services = {
-    # still unlock GPG when logging in via `login` (TTY)
-    login.gnupg.enable = true;
-
-    # NEW: unlock GPG when authenticating via hyprlock
-    hyprlock.gnupg.enable = true;
-  };
 
   # Auto-login on tty1 and start Hyprland
   services.getty.autologinUser = "agustin";
@@ -104,7 +95,7 @@
 
   hardware = {
     enableAllFirmware = true;
-    bluetooth.enable = false;
+    bluetooth.enable = true;
   };
 
   fonts.packages = with pkgs; [
@@ -121,7 +112,7 @@
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
-  services.blueman.enable = false; # Optional GUI
+  services.blueman.enable = true; # Optional GUI
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
@@ -163,16 +154,11 @@
     git
     kitty
     kitty.terminfo
-    alacritty
     pfetch
     brightnessctl
     tldr
     libnotify
     swaynotificationcenter
-    cargo
-    rustc
-    openjdk
-    neomutt
     yazi
     pavucontrol
     mpv
@@ -234,7 +220,6 @@
     calcurse
     obs-studio
     networkmanagerapplet
-    discord
     zathura
     mongodb-compass
     supertux
