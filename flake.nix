@@ -15,7 +15,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     helium = {
-      url = "github:FKouhai/helium2nix/main";
+      url = "github:schembriaiden/helium-browser-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs = { self, nixpkgs, nixos-hardware, home-manager, zen-browser, helium, terminaltexteffects, ... }:

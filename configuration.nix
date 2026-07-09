@@ -172,21 +172,12 @@
     typescript
     typescript-language-server
     curl
-    isync
-    msmtp
     pass
-    lynx
-    abook
-    notmuch
-    urlscan
-    gettext
-    mutt-wizard
     gnupg
     pinentry-curses
     pinentry-qt
     dmidecode
     lshw
-    sassc
     gtk-engine-murrine
     gnome-themes-extra
     nemo
