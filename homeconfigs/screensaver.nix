@@ -181,6 +181,97 @@ let
         ;;
     esac
   '';
+  omarchyBrightnessDisplay = mkScript "omarchy-brightness-display" ''
+    step="''${1:-+5%}"
+
+    if [[ "$step" == "off" ]]; then
+      hyprctl dispatch dpms off >/dev/null 2>&1
+      exit 0
+    elif [[ "$step" == "on" ]]; then
+      hyprctl dispatch dpms on >/dev/null 2>&1
+      exit 0
+    fi
+
+    runtime_dir="''${XDG_RUNTIME_DIR:-/tmp}"
+    exec 9>"$runtime_dir/omarchy-brightness-display.lock"
+    flock -n 9 || exit 0
+
+    device="$(ls -1 /sys/class/backlight 2>/dev/null | head -n1)"
+
+    for candidate in amdgpu_bl* intel_backlight acpi_video*; do
+      if [[ -e /sys/class/backlight/$candidate ]]; then
+        device="$candidate"
+        break
+      fi
+    done
+
+    if [[ -z "''${device:-}" ]]; then
+      notify-send "No backlight device found"
+      exit 1
+    fi
+
+    current="$(brightnessctl -d "$device" -m | cut -d',' -f4 | tr -d '%')"
+
+    if [[ "$step" == "+5%" ]]; then
+      if (( current < 5 )); then
+        (( target = current + 1 ))
+      else
+        (( target = current + 5 ))
+      fi
+      (( target > 100 )) && target=100
+      step="$target%"
+    elif [[ "$step" == "5%-" ]]; then
+      if (( current <= 5 )); then
+        (( target = current - 1 ))
+      else
+        (( target = current - 5 ))
+      fi
+      (( target < 1 )) && target=1
+      step="$target%"
+    fi
+
+    brightnessctl -d "$device" set "$step" >/dev/null
+
+    if command -v omarchy-swayosd-brightness >/dev/null 2>&1; then
+      omarchy-swayosd-brightness "$(brightnessctl -d "$device" -m | cut -d',' -f4 | tr -d '%')"
+    fi
+  '';
+
+  omarchySystemLock = mkScript "omarchy-system-lock" ''
+    if ! pidof hyprlock >/dev/null; then
+      (
+        hyprlock
+        command -v omarchy-system-wake >/dev/null 2>&1 && omarchy-system-wake
+      ) &
+    fi
+
+    hyprctl switchxkblayout all 0 >/dev/null 2>&1 || true
+
+    if pgrep -x "1password" >/dev/null 2>&1; then
+      1password --lock &
+    fi
+
+    pkill -f org.omarchy.screensaver 2>/dev/null || true
+
+    if [[ "''${OMARCHY_LOCK_ONLY:-false}" != "true" ]]; then
+      (
+        sleep 3
+        pidof hyprlock >/dev/null || exit 0
+
+        command -v omarchy-brightness-keyboard >/dev/null 2>&1 &&
+          omarchy-brightness-keyboard off
+
+        omarchy-brightness-display off
+      ) &
+    fi
+  '';
+  omarchySystemWake = mkScript "omarchy-system-wake" ''
+    omarchy-brightness-display on
+
+    if command -v omarchy-brightness-keyboard >/dev/null 2>&1; then
+      omarchy-brightness-keyboard restore
+    fi
+  '';
 
 in
 {
@@ -189,9 +280,15 @@ in
     launchScreensaver
     toggleScreensaver
     brandingScreensaver
+    omarchyBrightnessDisplay
+    omarchySystemLock
+    omarchySystemWake
 
     jq
     libnotify
+    brightnessctl
+    util-linux
+    hyprlock
   ];
 
   xdg.configFile."omarchy/branding/screensaver.txt" = {
