@@ -46,7 +46,7 @@
     docker
     dbeaver-bin
     texliveFull
-    (helium.defaultPackage.${pkgs.system}) # <-- use this
+    helium.packages.${pkgs.system}.default
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

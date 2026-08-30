@@ -2,9 +2,9 @@
 
   description = "My first flake!";
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-25.11";
+    nixpkgs.url = "nixpkgs/nixos-26.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     terminaltexteffects.url = "github:ChrisBuilds/terminaltexteffects";
@@ -15,7 +15,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     helium = {
-      url = "github:FKouhai/helium2nix/main";
+      url = "github:schembriaiden/helium-browser-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs = { self, nixpkgs, nixos-hardware, home-manager, zen-browser, helium, terminaltexteffects, ... }:
