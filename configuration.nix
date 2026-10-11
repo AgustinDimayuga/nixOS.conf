@@ -26,7 +26,7 @@
   boot.loader.grub.device = "nodev"; # UEFI installs to the ESP, not an MBR
   boot.loader.efi.efiSysMountPoint = "/boot";
   boot.loader.grub.gfxmodeEfi = "800x600"; # for EFI
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  #boot.kernelPackages = pkgs.linuxPackages_latest;
 
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
@@ -212,7 +212,6 @@
     obs-studio
     networkmanagerapplet
     zathura
-    mongodb-compass
     supertux
 
 
